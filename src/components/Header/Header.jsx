@@ -25,10 +25,12 @@ function Header() {
         <Link to = '/login'>
          <button className=' px-4 border duration-300 hover:bg-red-400 text-xl font-semibold rounded-2xl py-1'>Login</button>
         </Link>
-        <Link to= '/Cart'>
-            <img src={cart} alt="" />
-        </Link>
-        <div className='w-4 -h-4 -ml-10 -mt-10 bg-red-400 px-1 rounded-full font-bold text-sm text-white'>{itemsInCart()}</div>
+        <div className='relative'>
+          <Link to= '/Cart'>
+              <img src={cart} alt="" />
+          </Link>
+          <div className='w-4 absolute -top-1 left-9 bg-red-400 pl-1 rounded-xl font-bold text-sm text-white'>{itemsInCart()}</div>
+        </div> 
         </div>
     </div>
   )
