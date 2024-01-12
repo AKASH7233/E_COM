@@ -1,5 +1,5 @@
 import React from 'react'
-import Lists from './lists'
+import Lists from './Lists'
 import { FaInstagram, FaPinterest, FaWhatsapp } from "react-icons/fa";
 function Footer() {
   const list = [
