@@ -1,10 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useContext } from 'react'
 import { ShopContext } from '../../context/ShopContext'
 
 function CartCard() {
-    const {all_product,addToCart,cartItems,totalAmount,removeFromCart,remove} = useContext(ShopContext)
-    
+    const {all_product,addToCart,promo,setPromo,cartItems,totalAmount,removeFromCart,remove} = useContext(ShopContext)
+    const [coupon,setCoupon] = useState('')
+    const [search,setSearch] = useState(false)
+    const validity = () => {
+        (coupon == 'FLAT50') ? setPromo(true) : ''
+        setSearch(true)
+    }
+    const style = promo ? 'text-green-400' : 'text-red-400'
+
     return (
         <div>
             <div className='flex font-bold text-lg mx-32 mb-2 pt-32 border-b'>
@@ -64,9 +71,10 @@ function CartCard() {
                     <h2 className='text-gray-400'>If you have a promo code, Enter it here</h2>
                     <div className='my-4'>
                         <input className='bg-gray-200 px-4 py-2 w-72 text-black outline-none placeholder:text-black'
-                        type="text" 
-                        placeholder='promo code'/>
-                        <button className='bg-black text-white px-4 py-2'>Submit</button>
+                        type="text" value={coupon} onChange = {(e)=>setCoupon(e.target.value)}placeholder='promo code'/>
+                        <button className='bg-black text-white px-4 py-2' onClick={validity}>Submit</button>
+                        {search && <h2 className='mt-5 '>{promo ? 'COUPON APPILED' : 'ENTER VALID COUPON CODE'}</h2>}
+                        {coupon.length == 0 ? `Enter 'FLAT50' For 50% OFF` : ``}
                     </div>
                 </div>
             </div>
