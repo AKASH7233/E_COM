@@ -8,12 +8,12 @@ import { Route } from 'react-router-dom'
 import Cart from './pages/Cart.jsx'
 import Login from './pages/Login.jsx'
 import Register from './pages/Register.jsx'
+import Product from './pages/product.jsx'
 import ShopContextProvider from './context/ShopContext.jsx'
 import men_banner from './assets/banner_mens.png'
 import women_banner from './assets/banner_women.png'
 import kid_banner from './assets/banner_kids.png'
 import ShopCategory from './components/ShopCategory/ShopCategory.jsx'
-import Product from './pages/product.jsx'
 
 
 
