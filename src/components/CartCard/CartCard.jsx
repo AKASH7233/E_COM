@@ -73,8 +73,10 @@ function CartCard() {
                         <input className='bg-gray-200 px-4 py-2 w-72 text-black outline-none placeholder:text-black'
                         type="text" value={coupon} onChange = {(e)=>setCoupon(e.target.value)}placeholder='promo code'/>
                         <button className='bg-black text-white px-4 py-2' onClick={validity}>Submit</button>
-                        {search && <h2 className='mt-5 '>{promo ? 'COUPON APPILED' : 'ENTER VALID COUPON CODE'}</h2>}
+                        <br />
                         {coupon.length == 0 ? `Enter 'FLAT50' For 50% OFF` : ``}
+                        {search && <h2 className='mt-5 '>{promo ? 'COUPON APPILED !!' : 'ENTER VALID COUPON CODE'}</h2>}
+                        
                     </div>
                 </div>
             </div>
